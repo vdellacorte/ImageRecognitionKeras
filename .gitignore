@@ -1,3 +1,7 @@
-./__pycache__
-./test_data
-./training_data
+__pycache__
+test_data
+training_data
+model_structure.json
+x_train.dat
+y_train.dat
+model_weights.h5
