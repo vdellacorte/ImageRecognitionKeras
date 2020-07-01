@@ -32,7 +32,7 @@ class TransferLearner:
         model.add(Dense(neurons, activation='relu'))
         model.add(Dropout(0.5))
         model.add(Dense(number_of_categories, activation='sigmoid'))
-        if number_of_categories == 2:
+        if number_of_categories == 1:
             loss = "binary_crossentropy"
         else:
             loss = 'categorical_crossentropy'

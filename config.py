@@ -10,4 +10,4 @@ TRAINING_CLASSES_FOLDERS_PATH = [Path("training_data") / "first_category",
                                  Path("training_data") / "second_category"]
 SOFTMAX_HIDDEN_NEURONS = 256
 
-TEST_IMAGE = "test_data/bay.jpg"
+TEST_IMAGE = "test_data/dog.png"
