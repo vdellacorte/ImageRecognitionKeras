@@ -16,11 +16,12 @@ def save_features_target_to_file(features_x, y_train):
 
 class TrainingDataLoader:
 
-    def __init__(self, is_binary):
-        self.__is_binary = is_binary
+    def __init__(self, is_single_class, image_format):
+        self.__is_single_class = is_single_class
+        self.__image_format = image_format
 
     def load_data(self, category_paths):
-        if self.__is_binary:
+        if self.__is_single_class:
             return self.__load_for_binary_classes(category_paths)
         else:
             return self.__load_for_categorical_classes(category_paths)
@@ -29,7 +30,7 @@ class TrainingDataLoader:
         images = []
         labels = []
         for i in range(len(category_paths)):
-            for img in category_paths[i].glob("*.png"):
+            for img in category_paths[i].glob("*" + self.__image_format):
                 img = image.load_img(img)
                 image_array = image.img_to_array(img)
                 images.append(image_array)
