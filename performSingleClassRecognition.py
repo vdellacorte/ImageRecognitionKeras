@@ -13,6 +13,7 @@ images = np.expand_dims(image_array, axis=0)
 images = vgg16.preprocess_input(images)
 
 input_shape = config.IMAGE_DIMENSION + (3,)
+print("Channels: ", input_shape)
 feature_extraction_model = vgg16.VGG16(weights='imagenet', include_top=False, input_shape=input_shape)
 features = feature_extraction_model.predict(images)
 
